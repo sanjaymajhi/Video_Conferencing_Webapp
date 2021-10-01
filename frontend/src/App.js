@@ -1,8 +1,18 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ContextProvider } from "./context";
+import Homepage from "./components/Homepage"
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Router>
+        <ContextProvider>
+          <Switch>
+            <Route path="/" exact component={Homepage} />
+          </Switch>
+        </ContextProvider>
+      </Router>
     </div>
   );
 }
